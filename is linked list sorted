@@ -1,0 +1,24 @@
+bool isSorted(Node * head)
+{
+    int c=0,c1=0,c2=0;
+    for (Node *t=head; t->next != NULL; t=t->next)
+    {
+        c++;
+       if (t->data <= t->next->data)
+       {
+            c1++;
+       }
+    }
+    for (Node *t=head; t->next != NULL; t=t->next)
+    {
+       if (t->data >= t->next->data)
+       {
+            c2++;
+       }
+    }
+    if(c1==c || c2==c)
+    {
+        return 1;
+    }
+    return 0;
+}
